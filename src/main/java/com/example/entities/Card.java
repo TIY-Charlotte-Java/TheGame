@@ -40,9 +40,7 @@ public class Card {
         this.suite = suite;
     }
 
-    public static ArrayList<Card> buildDeck() {
-        ArrayList<Card> Deck = new ArrayList<>();
-
-
-    }
+//    public static ArrayList<Card> buildDeck() {
+//        ArrayList<Card> Deck = new ArrayList<>();
+//    }
 }
