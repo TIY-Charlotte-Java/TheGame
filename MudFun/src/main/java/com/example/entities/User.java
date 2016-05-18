@@ -18,6 +18,9 @@ public class User {
     @Column(nullable = false)
     String password;
 
+    @Column(nullable = false)
+    Integer chipCount;
+
     public int getId() {
         return id;
     }
@@ -42,8 +45,17 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String password) {
+    public Integer getChipCount() {
+        return chipCount;
+    }
+
+    public void setChipCount(Integer chipCount) {
+        this.chipCount = chipCount;
+    }
+
+    public User(String username, String password, Integer chipCount) {
         this.username = username;
         this.password = password;
+        this.chipCount = chipCount;
     }
 }
