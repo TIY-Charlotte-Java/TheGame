@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Card {
 
-    String rank;
+    Ranks rank;
     Suites suite;
 
 
@@ -19,11 +19,27 @@ public class Card {
 
     }
 
-    public String getRank() {
+    public enum Ranks {
+        TWO,
+        THREE,
+        FOUR,
+        FIVE,
+        SIX,
+        SEVEN,
+        EIGHT,
+        NINE,
+        TEN,
+        JACK,
+        QUEEN,
+        KING,
+        ACE
+    }
+
+    public Ranks getRank() {
         return rank;
     }
 
-    public void setRank(String rank) {
+    public void setRank(Ranks rank) {
         this.rank = rank;
     }
 
@@ -35,12 +51,18 @@ public class Card {
         this.suite = suite;
     }
 
-    public Card(String rank, Suites suite) {
+    public Card(Ranks rank, Suites suite) {
         this.rank = rank;
         this.suite = suite;
     }
 
-//    public static ArrayList<Card> buildDeck() {
-//        ArrayList<Card> Deck = new ArrayList<>();
-//    }
+
+    public static ArrayList<Card> buildDeck() {
+        ArrayList<Card> Deck = new ArrayList<>();
+
+        while (Deck.size() < 52) {
+            Deck.add(new Card(Ranks.ACE, Suites.CLUBS));
+        }
+        return Deck;
+    }
 }
