@@ -6,8 +6,8 @@ import javax.persistence.*;
  * Created by Ultramar on 5/17/16.
  */
 @Entity
+@Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue
     int id;
@@ -21,11 +21,11 @@ public class User {
     @Column(nullable = false)
     Integer chipCount;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,6 +51,9 @@ public class User {
 
     public void setChipCount(Integer chipCount) {
         this.chipCount = chipCount;
+    }
+
+    public User() {
     }
 
     public User(String username, String password, Integer chipCount) {
