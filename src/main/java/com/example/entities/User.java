@@ -1,6 +1,7 @@
 package com.example.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 /**
  * Created by Ultramar on 5/17/16.
@@ -23,6 +24,8 @@ public class User {
 
     @Column(nullable = false)
     String eMail;
+
+    public static ArrayList<Card> hand = new ArrayList<>();
 
     public Integer getId() {
         return id;

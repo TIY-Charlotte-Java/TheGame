@@ -9,7 +9,9 @@ import java.util.List;
 public class Game {
 
     List<User> users = new ArrayList<>();
-    ArrayList<Card> Deck = Card.buildDeck();
+    ArrayList<Card> Deck = shuffle(Card.buildDeck());
+    ArrayList<Card> share = new ArrayList<>();
+
 
     public ArrayList<Card> shuffle(ArrayList<Card> Deck) {
         ArrayList<Card> newDeck = new ArrayList<>();
@@ -22,6 +24,13 @@ public class Game {
     }
 
     public void deal() {
+        while (User.hand.size() < 2) {
+            User.hand.add(Deck.get(0));
+            Deck.remove(0);
+        }
+    }
+
+    public void Flop() {
 
     }
 
