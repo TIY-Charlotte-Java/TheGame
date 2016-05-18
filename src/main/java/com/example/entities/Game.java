@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class Game {
 
-    ArrayList<Card> Deck = Card.buildDeck();
     List<User> users = new ArrayList<>();
+    ArrayList<Card> Deck = Card.buildDeck();
 
     public void shuffle(ArrayList<Card> Deck) {
 
