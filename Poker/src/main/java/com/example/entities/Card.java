@@ -43,6 +43,6 @@ public class Card {
     public static ArrayList<Card> buildDeck() {
         ArrayList<Card> Deck = new ArrayList<>();
 
-
+        
     }
 }
