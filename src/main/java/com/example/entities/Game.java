@@ -31,7 +31,16 @@ public class Game {
     }
 
     public void Flop() {
+        while (share.size() < 3) {
+            share.add(Deck.get(0));
+            Deck.remove(0);
+        }
 
+    }
+
+    public void TurnAndRiver() {
+        share.add(Deck.get(0));
+        Deck.remove(0);
     }
 
     public void bet() {
