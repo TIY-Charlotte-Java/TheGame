@@ -11,7 +11,10 @@ public class Game {
     ArrayList<Card> Deck = Card.buildDeck();
     List<User> users = new ArrayList<>();
 
-    public void shuffle(ArrayList<Card> Deck) {
+    public ArrayList<Card> shuffle(ArrayList<Card> Deck) {
+        ArrayList<Card> newDeck = new ArrayList<>();
+
+        return newDeck;
 
     }
 
@@ -34,6 +37,8 @@ public class Game {
     public void fold() {
 
     }
+
+
 
 
 }

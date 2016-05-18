@@ -21,6 +21,9 @@ public class User {
     @Column(nullable = false)
     Integer chipCount;
 
+    @Column(nullable = false)
+    String eMail;
+
     public Integer getId() {
         return id;
     }
@@ -53,12 +56,21 @@ public class User {
         this.chipCount = chipCount;
     }
 
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
     public User() {
     }
 
-    public User(String username, String password, Integer chipCount) {
+    public User(String username, String password, Integer chipCount, String eMail) {
         this.username = username;
         this.password = password;
         this.chipCount = chipCount;
+        this.eMail = eMail;
     }
 }
