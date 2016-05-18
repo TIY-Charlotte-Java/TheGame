@@ -56,11 +56,12 @@ public class Card {
         this.suite = suite;
     }
 
+
     public static ArrayList<Card> buildDeck() {
         ArrayList<Card> Deck = new ArrayList<>();
 
         while (Deck.size() < 52) {
-
+            Deck.add(new Card(Ranks.ACE, Suites.CLUBS));
         }
         return Deck;
     }
