@@ -7,19 +7,19 @@ import java.util.ArrayList;
  */
 public class Card {
 
-    Ranks rank;
-    Suites suite;
+    Rank rank;
+    Suite suite;
 
 
-    public enum Suites {
+    public enum Suite {
         HEARTS,
         CLUBS,
-        DIMONDS,
+        DIAMONDS,
         SPADES
 
     }
 
-    public enum Ranks {
+    public enum Rank {
         TWO,
         THREE,
         FOUR,
@@ -35,23 +35,23 @@ public class Card {
         ACE
     }
 
-    public Ranks getRank() {
+    public Rank getRank() {
         return rank;
     }
 
-    public void setRank(Ranks rank) {
+    public void setRank(Rank rank) {
         this.rank = rank;
     }
 
-    public Suites getSuite() {
+    public Suite getSuite() {
         return suite;
     }
 
-    public void setSuite(Suites suite) {
+    public void setSuite(Suite suite) {
         this.suite = suite;
     }
 
-    public Card(Ranks rank, Suites suite) {
+    public Card(Rank rank, Suite suite) {
         this.rank = rank;
         this.suite = suite;
     }
@@ -60,8 +60,10 @@ public class Card {
     public static ArrayList<Card> buildDeck() {
         ArrayList<Card> Deck = new ArrayList<>();
 
-        while (Deck.size() < 52) {
-            Deck.add(new Card(Ranks.ACE, Suites.CLUBS));
+        for (Rank rank : Rank.values()) {
+            for (Suite suite : Suite.values()) {
+                Deck.add(new Card(rank, suite));
+            }
         }
         return Deck;
     }
