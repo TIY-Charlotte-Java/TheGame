@@ -22,8 +22,12 @@ public class PokerGameController {
 
     @Autowired
     UserRepository users;
+
+
     @RequestMapping(path = "/test", method = RequestMethod.GET)
     public String homePage() {
         return "index";
     }
+
+
 }
