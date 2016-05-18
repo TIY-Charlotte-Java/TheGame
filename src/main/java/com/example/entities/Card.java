@@ -62,5 +62,6 @@ public class Card {
         while (Deck.size() < 52) {
 
         }
+        return Deck;
     }
 }
