@@ -1,5 +1,7 @@
 package com.example.controllers;
 
+import com.example.entities.Game;
+import com.example.entities.User;
 import com.example.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -27,6 +29,12 @@ public class PokerGameController {
     @RequestMapping(path = "/test", method = RequestMethod.GET)
     public String homePage() {
         return "index";
+    }
+
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    public User login(String username) {
+        User user = Game.users.get(username);
+        return user;
     }
 
 
