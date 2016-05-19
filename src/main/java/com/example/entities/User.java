@@ -96,14 +96,17 @@ public class User {
         }
     }
 
-    public Integer raise(int amount) {
+    public Integer raise() {
         //use of multiple buttons
+        Integer amount = 0;
         betAmount = betAmount + amount;
         return betAmount;
     }
 
-    public void call() {
+    public Integer call() {
         //button to match last bet
+
+        return betAmount;
     }
 
     public void check() {
@@ -115,5 +118,6 @@ public class User {
 
     public void fold() {
         //button to give up like little baby man
+
     }
 }
