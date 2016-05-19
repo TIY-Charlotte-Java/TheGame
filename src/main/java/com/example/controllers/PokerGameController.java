@@ -41,5 +41,10 @@ public class PokerGameController {
         }
     }
 
+    @RequestMapping(path = "/register", method = RequestMethod.GET)
+    public void register(User user) {
+        
+    }
+
 
 }
