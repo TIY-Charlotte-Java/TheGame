@@ -10,26 +10,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by Ultramar on 5/17/16.
  */
 @Controller
 public class PokerGameController {
-    @MessageMapping("/hello")
-    @SendTo("/topic/greetings")
-    public String greeting(String message) throws Exception {
-        Thread.sleep(3000); // simulated delay
-        return "Hello, " + message;
-    }
-
     @Autowired
     UserRepository users;
 
-
-    @RequestMapping(path = "/test", method = RequestMethod.GET)
-    public String homePage() {
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String homePage(HttpSession session) {
         return "index";
     }
+
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public User login(String username) throws Exception{
@@ -45,6 +40,7 @@ public class PokerGameController {
     public void register(User user) {
         
     }
+
 
 
 }
