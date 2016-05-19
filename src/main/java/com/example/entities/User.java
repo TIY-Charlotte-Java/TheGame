@@ -29,6 +29,8 @@ public class User {
 
     Integer betAmount;
 
+    public boolean fold = false;
+
     public Integer getId() {
         return id;
     }
@@ -96,9 +98,8 @@ public class User {
         }
     }
 
-    public Integer raise() {
+    public Integer raise(Integer amount) {
         //use of multiple buttons
-        Integer amount = 0;
         betAmount = betAmount + amount;
         return betAmount;
     }
@@ -118,6 +119,7 @@ public class User {
 
     public void fold() {
         //button to give up like little baby man
+        fold = true;
 
     }
 }
