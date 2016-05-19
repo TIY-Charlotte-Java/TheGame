@@ -11,6 +11,7 @@ public class Game {
     List<User> users = new ArrayList<>();
     ArrayList<Card> Deck = shuffle(Card.buildDeck());
     ArrayList<Card> share = new ArrayList<>();
+    public static Integer pot = 0;
 
 
     public ArrayList<Card> shuffle(ArrayList<Card> Deck) {
@@ -43,7 +44,7 @@ public class Game {
         Deck.remove(0);
     }
 
-    
+
 
     int randomWithRange(int min, int max)
     {

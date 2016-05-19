@@ -27,6 +27,8 @@ public class User {
 
     public static ArrayList<Card> hand = new ArrayList<>();
 
+    Integer betAmount;
+
     public Integer getId() {
         return id;
     }
@@ -67,6 +69,14 @@ public class User {
         this.eMail = eMail;
     }
 
+    public Integer getBetAmount() {
+        return betAmount;
+    }
+
+    public void setBetAmount(Integer betAmount) {
+        this.betAmount = betAmount;
+    }
+
     public User() {
     }
 
@@ -78,11 +88,18 @@ public class User {
     }
 
     public void bet() {
-        //use of multible buttons
+        //used to confirm bet
+        if (true) {
+            chipCount = chipCount - betAmount;
+            Game.pot = Game.pot + betAmount;
+            betAmount = 0;
+        }
     }
 
-    public void raise() {
-        //use of multible buttons
+    public Integer raise(int amount) {
+        //use of multiple buttons
+        betAmount = betAmount + amount;
+        return betAmount;
     }
 
     public void call() {
@@ -91,6 +108,9 @@ public class User {
 
     public void check() {
         //skip bet
+        betAmount = null;
+        //if bet is made, force betting
+
     }
 
     public void fold() {
