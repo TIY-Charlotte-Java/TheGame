@@ -43,21 +43,7 @@ public class Game {
         Deck.remove(0);
     }
 
-    public void bet() {
-        //use of multible buttons
-    }
-
-    public void raise() {
-        //use of multible buttons
-    }
-
-    public void call() {
-        //button to match last bet
-    }
-
-    public void fold() {
-        //button to give up like little baby man
-    }
+    
 
     int randomWithRange(int min, int max)
     {

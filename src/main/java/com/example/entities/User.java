@@ -76,4 +76,24 @@ public class User {
         this.chipCount = chipCount;
         this.eMail = eMail;
     }
+
+    public void bet() {
+        //use of multible buttons
+    }
+
+    public void raise() {
+        //use of multible buttons
+    }
+
+    public void call() {
+        //button to match last bet
+    }
+
+    public void check() {
+        //skip bet
+    }
+
+    public void fold() {
+        //button to give up like little baby man
+    }
 }
