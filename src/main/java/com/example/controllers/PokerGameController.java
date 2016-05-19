@@ -32,9 +32,13 @@ public class PokerGameController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public User login(String username) {
+    public User login(String username) throws Exception{
         User user = Game.users.get(username);
-        return user;
+        if (user == null) {
+            throw new Exception("user is non-existent");
+        } else {
+            return user;
+        }
     }
 
 
