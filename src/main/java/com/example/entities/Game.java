@@ -1,6 +1,7 @@
 package com.example.entities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 public class Game {
 
-    List<User> users = new ArrayList<>();
+    public static HashMap<String, User> users = new HashMap<>();
     ArrayList<Card> Deck = shuffle(Card.buildDeck());
     ArrayList<Card> share = new ArrayList<>();
     public static Integer pot = 0;

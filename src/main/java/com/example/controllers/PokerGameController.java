@@ -1,5 +1,7 @@
 package com.example.controllers;
 
+import com.example.entities.Game;
+import com.example.entities.User;
 import com.example.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -22,4 +24,23 @@ public class PokerGameController {
     public String homePage(HttpSession session) {
         return "index";
     }
+
+
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    public User login(String username) throws Exception{
+        User user = Game.users.get(username);
+        if (user == null) {
+            throw new Exception("user is non-existent");
+        } else {
+            return user;
+        }
+    }
+
+    @RequestMapping(path = "/register", method = RequestMethod.GET)
+    public void register(User user) {
+        
+    }
+
+
+
 }
