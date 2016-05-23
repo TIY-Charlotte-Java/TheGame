@@ -27,7 +27,7 @@ public class User {
 
     public static ArrayList<Card> hand = new ArrayList<>();
 
-    Integer betAmount;
+    public static Integer betAmount;
 
     public boolean fold = false;
 
@@ -91,9 +91,13 @@ public class User {
 
     public void bet() {
         //used to confirm bet
-        if (true) {
+        if (betAmount < chipCount) {
             chipCount = chipCount - betAmount;
-            Game.pot = Game.pot + betAmount;
+            Game.pot += betAmount;
+            betAmount = 0;
+        } else {
+            Game.pot += chipCount;
+            chipCount = 0;
             betAmount = 0;
         }
     }
@@ -106,15 +110,13 @@ public class User {
 
     public Integer call() {
         //button to match last bet
-
+        betAmount = Game.lastBet;
         return betAmount;
     }
 
     public void check() {
         //skip bet
         betAmount = null;
-        //if bet is made, force betting
-
     }
 
     public void fold() {

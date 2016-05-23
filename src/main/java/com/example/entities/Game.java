@@ -13,6 +13,7 @@ public class Game {
     ArrayList<Card> Deck = shuffle(Card.buildDeck());
     ArrayList<Card> share = new ArrayList<>();
     public static Integer pot = 0;
+    public static Integer lastBet = User.betAmount;
 
 
     public ArrayList<Card> shuffle(ArrayList<Card> Deck) {
