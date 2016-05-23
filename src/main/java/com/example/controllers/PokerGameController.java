@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -51,10 +52,23 @@ public class PokerGameController {
 
         if (!Game.users.containsKey(user.getUsername())) {
             Game.users.put(user.getUsername(), user);
+            users.save(user);
         } else {
             throw new Exception("User already exists");
         }
 
+    }
+
+    @PostConstruct
+    public void init() {
+        if (users.count() == 0) {
+            User user = new User();
+            user.setUsername("Derek");
+            user.seteMail("Ultron@420noscope.com");
+            user.setPassword("Vargul");
+            user.setChipCount(2500);
+            users.save(user);
+        }
     }
 
 }
