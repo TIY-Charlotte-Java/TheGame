@@ -27,7 +27,7 @@ public class PokerGameController {
 
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public User login(String username) throws Exception{
+    public User login(String username) throws Exception {
         User user = Game.users.get(username);
         if (user == null) {
             throw new Exception("user is non-existent");
@@ -37,10 +37,28 @@ public class PokerGameController {
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.GET)
-    public void register(User user) {
-        
+    public String registeration(HttpSession session) {
+        return "registration";
     }
 
+    @RequestMapping(path = "/register", method = RequestMethod.POST)
+    public void register(HttpSession session) throws Exception {
+        User user = new User();
+        user.setUsername((String) session.getAttribute("userName"));
+        user.setPassword((String) session.getAttribute("passWord"));
+        user.seteMail((String) session.getAttribute("eMail"));
+        user.setChipCount((Integer) session.getAttribute("chipCount"));
 
+        if (!Game.users.containsKey(user.getUsername())) {
+            Game.users.put(user.getUsername(), user);
+        } else {
+            throw new Exception("User already exists");
+        }
+
+    }
 
 }
+
+
+
+
