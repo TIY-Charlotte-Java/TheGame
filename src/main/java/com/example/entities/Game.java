@@ -19,7 +19,7 @@ public class Game {
     public ArrayList<Card> shuffle(ArrayList<Card> Deck) {
         ArrayList<Card> newDeck = new ArrayList<>();
 
-        for (int i = 0; i < newDeck.size(); i++) {
+        for (int i = 0; i < Deck.size(); i++) {
             int j = randomWithRange(0, Deck.size());
             newDeck.add(Deck.get(j));
         }
